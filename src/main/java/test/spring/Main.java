@@ -12,6 +12,8 @@ public class Main {
     private void run() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
+        String branch = "branch2";
+
         Controller controller1 = (Controller) context.getBean("controller");
 
         controller1.printLog(" test");
