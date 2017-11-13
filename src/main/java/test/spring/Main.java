@@ -12,9 +12,9 @@ public class Main {
     private void run() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Controller controller1 = (Controller) context.getBean("controller");
+        Controller controller1 = context.getBean(Controller.class);
 
-        controller1.printLog(" test");
+        controller1.printLog("test");
 
     }
 }
