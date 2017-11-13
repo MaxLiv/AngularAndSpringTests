@@ -1,0 +1,17 @@
+test/Constants.class
+test/WrapFilter$1.class
+test/TestConfiguration.class
+test/LoggingInterceptor.class
+test/Request.class
+test/WrapFilter.class
+test/WrapFilter$RequestWrapper.class
+test/ApiContextListener.class
+test/LoggerTest.class
+test/Responce.class
+test/Interceptor.class
+test/WrapFilter$ResponseWrapper.class
+test/RequestLogger.class
+test/Controller.class
+test/Initialize.class
+test/WrapFilter$ResponseWrapper$ProxyOutputStream.class
+test/WrapFilter$RequestWrapper$ProxyInputStream.class
