@@ -12,9 +12,13 @@ public class Main {
     private void run() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Controller controller1 = (Controller) context.getBean("controller");
+//        This is the Spring example from the git tutorial.
+//        (changed in original)
 
-        controller1.printLog(" test");
+
+        Controller controller1 = context.getBean(Controller.class);
+
+        controller1.printLog("test");
 
     }
 }
