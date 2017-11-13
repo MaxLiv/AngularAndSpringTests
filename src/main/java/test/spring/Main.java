@@ -12,7 +12,7 @@ public class Main {
     private void run() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-//        This is the Spring example from the git tutorial.
+//        This is the Spring example.
 //        (changed in original)
 
 
