@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+<script src="searchScript8.js" charset="utf-8">
+
+    function main() {
+
+        var text = localStorage.getItem("test.json");
+        var obj = JSON.parse(text);
+    }
+</script>
+
+<script src="searchQuery.js">
+    function buildQuery() {
+
+        var search_Option = document.getElementById("search_option").value;
+        if (search_Option) {
+            console.debug(QueryBuilder.buildFromData());
+        }
+    }
+</script>
+<input id="search_option" type="text">
+<input id="city_id" type="text">
+<input id="address" type="text">
+<button onclick="run()">Push me!</button>
+<button onclick="query()">Query!</button>
+
+</body>
+</html> 

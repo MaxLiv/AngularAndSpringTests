@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+    <input ng-model="fname">
+    <input type="number" ng-model="n">
+    <p>{{n*8 | currency:"₴"}}</p>
+    <input ng-model="fname">
+    <p>{{fname}}</p>
+    <ul>
+        <li ng-repeat="x in names | uppercase | filter: {name:fname}">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+
+    <table border="1" width="100%">
+        <tr>
+            <th ng-click="orderByMe('name')">Name</th>
+            <th ng-click="orderByMe('country')">Country</th>
+            <th ng-click="orderByMe('')">Population</th>
+        </tr>
+        <tr ng-repeat="x in names | uppercase | orderBy:myOrderBy | myFormat ">
+            <td ng-click="tableValue(x.name, x.country, x.people)">{{x.name}}</td>
+            <td ng-click="tableValue(x.name, x.country, x.people)">{{x.country}}</td>
+            <td ng-click="tableValue(x.name, x.country, x.people)">{{x.people}}</td>
+        </tr>
+    </table>
+
+    <p ng-if="nameFromTable">{{nameFromTable + " from " + countryFromTable + " where " + peopleFromTable + " people"}}</p>
+    <h1>{{myWelcome}}</h1>
+
+
+    <div>
+        <input type="text" value="дикий" ng-model="searchOption">
+        <!--<input type="text" value="ru" ng-model="lang">-->
+        <!--<input type="text" value="outSource" ng-model="MP">-->
+        <!--<input type="text" value="ekb" ng-model="1027377150">-->
+        <!--<input type="checkbox" ng-model="simpleSearch">-->
+        <button ng-click="sendRequest()">Search</button>
+    </div>
+
+    <table ng-if="checkResponse()" border="1" width="60%" align="center">
+        <tr>
+            <th>templateId</th>
+            <th>addrId</th>
+            <th>company</th>
+        </tr>
+        <tr ng-repeat="x in response.resultTemplates ">
+            <td>{{x.templateId}}</td>
+            <td>{{x.addrId}}</td>
+            <td>{{x.company}}</td>
+        </tr>
+    </table>
+</div>
+
+<script src="js.js"></script>
+</body>
+</html>
